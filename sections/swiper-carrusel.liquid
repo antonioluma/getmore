@@ -1,0 +1,288 @@
+<!-- Sección personalizada para carrusel -->
+<section class="collection-carousel">
+  <div class="page-width">
+  <div class="container">
+    <div class="carousel-layout">
+      <!-- Imagen como background a la izquierda -->
+      <div class="carousel-left" style="background-image: url({{ section.settings.left_image | img_url: 'large' }});">
+        <div class="carousel-text">
+          <h2>{{ section.settings.heading }}</h2>
+          <p>{{ section.settings.subheading }}</p>
+          <!-- Swiper pagination -->
+            <div class="swiper-pagination"></div>
+                      <!-- Swiper navigation -->
+          <div class="btn-swper">
+            <div class="children">
+            <div class="swiper-button-prev"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24"><path fill="#ffffff" d="M15 17.192L6.846 12L15 6.808z"/></svg></div>
+              </div>
+              <div class="children">
+            <div class="swiper-button-next"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24"><path fill="#ffffff" d="M15 17.192L6.846 12L15 6.808z"/></svg></div>
+              </div>
+            
+          </div>
+        </div>
+      </div>
+      
+      <!-- Carrusel a la derecha -->
+      <div class="carousel-right">
+        {% if section.settings.collection %}
+          <!-- Swiper container -->
+          <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+  {% for product in collections[section.settings.collection].products %}
+    <div class="swiper-slide">
+      <div class="product-card">
+        <!-- Número del producto -->
+        <div class="product-number">
+          <span>{{ forloop.index }}</span>
+        </div>
+        <!-- Imagen del producto -->
+        <img src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.title }}">
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+
+
+            
+          </div>
+        {% else %}
+          <p>Por favor selecciona una colección en la configuración de la sección.</p>
+        {% endif %}
+      </div>
+    </div>
+      </div>        
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Carrusel",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "left_image",
+      "label": "Imagen de fondo izquierda"
+    },
+    {
+      "type": "html",
+      "id": "heading",
+      "label": "Título",
+      "default": "Nuestras Raquetas"
+    },
+    {
+      "type": "html",
+      "id": "subheading",
+      "label": "Subtítulo",
+      "default": "Conoce nuestras raquetas y aprende a jugar Tennis como un profesional."
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Colección"
+    }
+  ],
+  "blocks": [],
+  "presets": [
+    {
+      "name": "Carrusel de colección con fondo",
+    }
+  ]
+}
+{% endschema %}
+
+<!-- CSS personalizado -->
+<style>
+  .collection-carousel .carousel-layout {
+    display: flex;
+    align-items: center;
+  }
+
+  .collection-carousel .carousel-left {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 468px; /* Ajusta la altura mínima */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+        width: 530px;
+    justify-content: flex-end;
+  }
+
+  .collection-carousel .carousel-left .carousel-text h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #fff; /* Cambiar color de texto */
+    text-align: left;
+  }
+
+.collection-carousel .carousel-left .carousel-text p {
+    font-size: 18px;
+    color: #fff;
+    text-align: left;
+}
+
+  .collection-carousel .carousel-right {
+    flex: 2;
+    padding: 20px;
+    width: 40%;
+  }
+
+  .product-card img {
+    max-width: 100%;
+    height: auto;
+  }
+  .product-card {
+    width: 288px;
+    height: 344px;
+    background: #f3f4f8;
+    border-radius: 21px;
+}
+  .swiper-pagination {
+    position: relative;
+    text-align: start;
+    z-index: 0;
+}
+  .swiper-pagination-bullet-active{
+    background: #cbe346 !important;
+  }
+  span.swiper-pagination-bullet {
+    background: white;
+    opacity: 1;
+}
+  .swiper-button-next {
+    display: block !important;
+}
+  .swiper-button-prev {
+    display: block !important;
+    position: relative;
+}
+.swiper-button-next {
+    display: block !important;
+    position: relative;
+    left: 0;
+    right: 0;
+}
+  .btn-swper {
+    display: flex;
+    gap: 1rem;
+}
+  .swiper-button-prev::after{
+    display: none;
+  }
+  .swiper-button-next::after{
+    display: none;
+  }
+  .swiper-button-next svg{
+    transform: scaleX(-1);
+  }
+  .swiper-button-prev {
+    left: 0;
+    right: 0;
+}
+  .btn-swper div {
+    background: #cbe346;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    border-radius: 5rem;
+    width: 51px;
+    height: 51px;
+    box-shadow: 3px 5px 22px black;
+    z-index: 0;
+}
+.btn-swper svg {
+    width: 35px;
+    height: 50px;
+}
+  .children {
+    background: none !important;
+        box-shadow: none !important;
+}
+  .product-card {
+    width: 288px;
+    height: 344px;
+    background: #f3f4f8;
+}
+  .product-card {
+  position: relative; /* Posición relativa para el número */
+  width: 288px;
+  height: 344px;
+  background: #f3f4f8;
+  border-radius: 21px;
+}
+
+.product-number {
+  position: absolute;
+  top: 10px; /* Posiciona el círculo verde */
+  left: 15px;
+  background-color: #cbe346; /* Verde */
+  color: white; /* Texto en color oscuro */
+  width: 39px;
+  height: 39px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%; /* Círculo perfecto */
+  font-family: HelveticaNeue;
+  font-size: 17px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.76;
+  text-align: center;
+}
+
+.product-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 21px;
+}
+
+ .swiper-button-disabled {
+    background: none !important;
+    box-shadow: none !important;
+    border: 1px solid white;
+    opacity: 1 !important;
+} 
+
+</style>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var swiper = new Swiper('.mySwiper', {
+      loop: false,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      slidesPerView: 1,
+      spaceBetween: 10,
+      breakpoints: {
+        640: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        768: {
+          slidesPerView: 3,
+          spaceBetween: 10,
+        },
+        1024: {
+          slidesPerView: 2.7,
+          spaceBetween: 40,
+        },
+      }, 
+    });
+  });
+</script>
+
+
+
+

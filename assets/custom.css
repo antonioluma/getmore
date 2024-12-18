@@ -1,0 +1,347 @@
+/* Contenedor principal */
+.grid-container {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+/* Contenedor fluido (sin márgenes laterales) */
+.grid-container-fluid {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+/* Filas */
+.grid-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+/* Columnas */
+[class*="grid-col-"] {
+  padding-right: 15px;
+  padding-left: 15px;
+  box-sizing: border-box;
+}
+
+/* Columnas responsivas */
+.grid-col-1 { flex: 0 0 8.33%; max-width: 8.33%; }
+.grid-col-2 { flex: 0 0 16.66%; max-width: 16.66%; }
+.grid-col-3 { flex: 0 0 25%; max-width: 25%; }
+.grid-col-4 { flex: 0 0 33.33%; max-width: 33.33%; }
+.grid-col-5 { flex: 0 0 41.66%; max-width: 41.66%; }
+.grid-col-6 { flex: 0 0 50%; max-width: 50%; }
+.grid-col-7 { flex: 0 0 58.33%; max-width: 58.33%; }
+.grid-col-8 { flex: 0 0 66.66%; max-width: 66.66%; }
+.grid-col-9 { flex: 0 0 75%; max-width: 75%; }
+.grid-col-10 { flex: 0 0 83.33%; max-width: 83.33%; }
+.grid-col-11 { flex: 0 0 91.66%; max-width: 91.66%; }
+.grid-col-12 { flex: 0 0 100%; max-width: 100%; }
+
+/* Breakpoints */
+@media (min-width: 576px) {
+  .grid-col-sm-1 { flex: 0 0 8.33%; max-width: 8.33%; }
+  .grid-col-sm-2 { flex: 0 0 16.66%; max-width: 16.66%; }
+  .grid-col-sm-3 { flex: 0 0 25%; max-width: 25%; }
+  .grid-col-sm-4 { flex: 0 0 33.33%; max-width: 33.33%; }
+  .grid-col-sm-5 { flex: 0 0 41.66%; max-width: 41.66%; }
+  .grid-col-sm-6 { flex: 0 0 50%; max-width: 50%; }
+  .grid-col-sm-7 { flex: 0 0 58.33%; max-width: 58.33%; }
+  .grid-col-sm-8 { flex: 0 0 66.66%; max-width: 66.66%; }
+  .grid-col-sm-9 { flex: 0 0 75%; max-width: 75%; }
+  .grid-col-sm-10 { flex: 0 0 83.33%; max-width: 83.33%; }
+  .grid-col-sm-11 { flex: 0 0 91.66%; max-width: 91.66%; }
+  .grid-col-sm-12 { flex: 0 0 100%; max-width: 100%; }
+}
+
+@media (min-width: 768px) {
+  .grid-col-md-1 { flex: 0 0 8.33%; max-width: 8.33%; }
+  .grid-col-md-2 { flex: 0 0 16.66%; max-width: 16.66%; }
+  .grid-col-md-3 { flex: 0 0 25%; max-width: 25%; }
+  .grid-col-md-4 { flex: 0 0 33.33%; max-width: 33.33%; }
+  .grid-col-md-5 { flex: 0 0 41.66%; max-width: 41.66%; }
+  .grid-col-md-6 { flex: 0 0 50%; max-width: 50%; }
+  .grid-col-md-7 { flex: 0 0 58.33%; max-width: 58.33%; }
+  .grid-col-md-8 { flex: 0 0 66.66%; max-width: 66.66%; }
+  .grid-col-md-9 { flex: 0 0 75%; max-width: 75%; }
+  .grid-col-md-10 { flex: 0 0 83.33%; max-width: 83.33%; }
+  .grid-col-md-11 { flex: 0 0 91.66%; max-width: 91.66%; }
+  .grid-col-md-12 { flex: 0 0 100%; max-width: 100%; }
+}
+
+@media (min-width: 992px) {
+  .grid-col-lg-1 { flex: 0 0 8.33%; max-width: 8.33%; }
+  .grid-col-lg-2 { flex: 0 0 16.66%; max-width: 16.66%; }
+  .grid-col-lg-3 { flex: 0 0 25%; max-width: 25%; }
+  .grid-col-lg-4 { flex: 0 0 33.33%; max-width: 33.33%; }
+  .grid-col-lg-5 { flex: 0 0 41.66%; max-width: 41.66%; }
+  .grid-col-lg-6 { flex: 0 0 50%; max-width: 50%; }
+  .grid-col-lg-7 { flex: 0 0 58.33%; max-width: 58.33%; }
+  .grid-col-lg-8 { flex: 0 0 66.66%; max-width: 66.66%; }
+  .grid-col-lg-9 { flex: 0 0 75%; max-width: 75%; }
+  .grid-col-lg-10 { flex: 0 0 83.33%; max-width: 83.33%; }
+  .grid-col-lg-11 { flex: 0 0 91.66%; max-width: 91.66%; }
+  .grid-col-lg-12 { flex: 0 0 100%; max-width: 100%; }
+}
+
+@media (min-width: 1200px) {
+  .grid-col-xl-1 { flex: 0 0 8.33%; max-width: 8.33%; }
+  .grid-col-xl-2 { flex: 0 0 16.66%; max-width: 16.66%; }
+  .grid-col-xl-3 { flex: 0 0 25%; max-width: 25%; }
+  .grid-col-xl-4 { flex: 0 0 33.33%; max-width: 33.33%; }
+  .grid-col-xl-5 { flex: 0 0 41.66%; max-width: 41.66%; }
+  .grid-col-xl-6 { flex: 0 0 50%; max-width: 50%; }
+  .grid-col-xl-7 { flex: 0 0 58.33%; max-width: 58.33%; }
+  .grid-col-xl-8 { flex: 0 0 66.66%; max-width: 66.66%; }
+  .grid-col-xl-9 { flex: 0 0 75%; max-width: 75%; }
+  .grid-col-xl-10 { flex: 0 0 83.33%; max-width: 83.33%; }
+  .grid-col-xl-11 { flex: 0 0 91.66%; max-width: 91.66%; }
+  .grid-col-xl-12 { flex: 0 0 100%; max-width: 100%; }
+}
+
+
+
+/*---------------- Global Custom CSS -------------------*/
+.Las-mejores-raquetas {font-family: HelveticaNeue;font-size: 53px;font-weight: normal;font-stretch: normal;font-style: normal;line-height: 1.28;letter-spacing: -0.05px;color: white;}
+.Las-mejores-raquetas .text-style-1 {font-weight: bold;color: #cbe346;}
+.button:after, .shopify-payment-button__button--unbranded:after {padding: 15px 39px 15px 30px;border-radius: 26.5px !important;font-family: HelveticaNeue;font-size: 13px;font-weight: bold;font-stretch: normal;font-style: normal;line-height: 2.15;letter-spacing: 1.01px;}
+h2.banner__heading.inline-richtext.h0 {margin-bottom: 3rem;}
+img.Path {filter: invert(1);margin-left: .5rem;}
+.TENNIS {width: 174px;height: 33px;margin: 32px 51px 101px 0;font-family: HelveticaNeue;font-size: 15px;font-weight: 500;font-stretch: normal;font-style: normal;line-height: 2;letter-spacing: 1.87px;text-align: right;color: #cbe346;}
+.grid-item.grid-1 {text-align: right !important;}
+.Conoce-nuestras-raqu {
+  font-family: HelveticaNeue;
+  font-size: 18px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.78;
+  letter-spacing: 0.51px;
+  color: #787878;
+}
+.RaquetasAccesorios {
+  font-family: HelveticaNeue;
+  font-size: 50px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.14;
+  letter-spacing: -0.06px;
+  color: var(--dark);
+}
+.grid-item.grid-2 {text-align: left;}
+.grid-item.grid-2 h2 {
+    margin-bottom: 4rem;
+}
+
+.HISTORIA {
+    font-family: HelveticaNeue;
+    font-size: 13px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2.15;
+    letter-spacing: 1.01px;
+    color: #273048;
+    border: 1px solid;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 234px;
+    height: 53px;
+    margin: 49px 0 0;
+    padding: 15px 38px;
+    border-radius: 26.5px;
+    text-decoration: none;
+}
+.grid-3 {
+    width: 20%;
+    display: flex;
+    align-items: flex-end;
+}
+Conoce-nuestras-raqu-v2 {
+  width: 303px;
+  height: 122px;
+  margin: 135px 0 14px 10px;
+  font-family: HelveticaNeue;
+  font-size: 18px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.67;
+  letter-spacing: 0.51px;
+  color: white;
+}
+.Nuestras-Raquetas {
+  font-family: HelveticaNeue;
+  font-size: 50px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.28;
+  letter-spacing: -0.06px;
+  color: var(--white);
+}
+.Nuestras-Raquetas .text-style-1 {
+  font-weight: bold;
+}
+.carousel-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    width: 65%;
+}
+.product-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.list-menu span {
+    color: white;
+}
+.svg-wrapper svg {
+    filter: invert(1);
+}
+details-modal.header__search {
+    display: none !important;
+}
+a.header__icon.header__icon--account.link.focus-inset.small-hide {
+    display: none;
+}
+a#cart-icon-bubble {
+    display: none;
+}
+
+.desktop-localization-wrapper {
+    gap: 2rem;
+    color: white;
+}
+.idiomas-es {
+  font-family: HelveticaNeue;
+  font-size: 13px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 1.14px;
+}
+.idiomas-en {
+  font-family: HelveticaNeue;
+  font-size: 13px;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 1.14px;
+}
+.banner__box.content-container.content-container--full-width-mobile.color-scheme-3.gradient {
+    margin-left: 10rem;
+}
+
+.list-menu--inline {
+    gap: 3rem;
+}
+.list-menu span {
+    color: white;
+    font-family: HelveticaNeue;
+}
+.header__menu-item:hover span {
+    font-weight: bold;
+  text-underline-offset: 2rem !important;
+}
+.grid-item.grid-2 {
+    max-width: 100%; 
+}
+.footer-content {
+    max-width: 100%;
+}
+svg.icon.icon-close {
+    filter: invert(1);
+}
+
+
+/*---------------- Custom CSS for only desktop -------------------*/
+@media (min-width: 1025px) {
+
+}
+
+/*---------------- Custom CSS for tablet, mobile -------------------*/
+@media (max-width: 1024px) {
+
+}
+
+/*---------------- Custom CSS for only tablet -------------------*/
+@media (min-width: 768px) and (max-width: 1024px) {
+
+}
+
+/*---------------- Custom CSS for only mobile -------------------*/
+@media (max-width: 768px){
+  .banner__box.content-container.content-container--full-width-mobile.color-scheme-3.gradient {
+    margin-left: 0rem !important;
+}
+  .footer-menu {
+    gap: 14px !important;
+}
+  .custom-footer {
+    padding: 1rem 1rem !important;
+}
+  .footer-menu {
+    justify-content: flex-start !important;
+
+}
+  .custom-grid .grid-container {
+    flex-direction: column;
+}
+  .RaquetasAccesorios {
+    font-size: 3rem;
+}
+  .Conoce-nuestras-raqu {
+    font-size: 1.5rem;
+}
+  .footer-content {
+    flex-direction: column;
+}
+  .footer-menu {
+    width: 100% !important;
+}
+  .collection-carousel .carousel-layout {
+    flex-direction: column !important;
+}
+  .collection-carousel .carousel-right {
+    width: 100% !important;
+}
+  svg.icon.icon-hamburger {
+    filter: invert(1);
+}
+  .carousel-left {
+    max-width: 100%;
+}
+  .carousel-text {
+    width: 90%;
+}
+  .Las-mejores-raquetas {
+    font-size: 31px;
+}
+  .custom-grid .grid-container {
+    gap: 0px !important;
+    padding: 2rem 0rem !important;
+}
+  .grid-item.grid-1 {
+    text-align: left !important;
+}
+  .product-card {
+    position: relative;
+    width: 100% !important;
+    height: 356px !important;
+
+}
+
+
+}

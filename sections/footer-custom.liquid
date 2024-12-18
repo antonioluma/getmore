@@ -1,0 +1,125 @@
+{% schema %}
+{
+  "name": "Custom Footer",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "menu_item",
+      "name": "Menu Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "menu_text",
+          "label": "Menu Text",
+          "default": "Menu Item"
+        },
+        {
+          "type": "url",
+          "id": "menu_link",
+          "label": "Menu Link"
+        }
+      ]
+    },
+    {
+      "type": "social_icon",
+      "name": "Social Icon",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "social_icon_img",
+          "label": "Social Icon"
+        },
+        {
+          "type": "url",
+          "id": "social_link",
+          "label": "Social Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Footer",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
+
+<div class="custom-footer footer section-sections--16525854802019__footer-padding" style="background-color: #D7E752;">
+  
+  <div class="footer-content" style="display: flex; justify-content: space-between; align-items: center;">
+    <!-- Menu Items -->
+    <div>
+    <div class="footer-menu" style="display: flex; gap: 20px;">
+      {% for block in section.blocks %}
+        {% if block.type == 'menu_item' %}
+          <a href="{{ block.settings.menu_link }}" style="text-decoration: none; color: #000;">
+            <strong>{{ block.settings.menu_text }}</strong>
+          </a>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    <!-- Social Icons -->
+    <div class="footer-social-icons" style="display: flex; gap: 10px;">
+      {% for block in section.blocks %}
+        {% if block.type == 'social_icon' %}
+          <a href="{{ block.settings.social_link }}" target="_blank">
+            <img src="{{ block.settings.social_icon_img | img_url: 'small' }}" alt="Social Icon" style="width: 36px; height: 36px;">
+          </a>
+        {% endif %}
+      {% endfor %}
+    </div>
+      </div>
+
+    <!-- Logo -->
+    <div class="footer-logo">
+      {% if section.settings.logo != blank %}
+        <img src="{{ section.settings.logo | img_url: 'medium' }}" alt="Logo" style="height: 50px;">
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+
+
+<style>
+  .custom-footer {
+    height: 203px;
+}
+  .footer-content {
+    height: 183px;
+}
+  .custom-footer {
+    padding: 2rem 8rem;
+}
+  .footer-menu {
+    width: 451px;
+    justify-content: space-between;
+    height: 37px;
+    margin-bottom: 1rem;
+}
+  .footer-logo {
+    width: 55px;
+    height: 55px;
+}
+  .footer-logo img {
+    width: 55px;
+    height: 55px;
+}
+  .footer-menu strong {
+    font-family: HelveticaNeue;
+    font-weight: 100;
+}
+  .footer-menu a:first-of-type strong {
+  font-weight: bold;
+}
+
+</style>

@@ -1,0 +1,113 @@
+{% schema %}
+{
+  "name": "Grid Personalizada",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "texto",
+      "name": "Texto",
+      "settings": [
+        {
+          "type": "html",
+          "id": "contenido_texto",
+          "label": "Texto"
+        }
+      ]
+    },
+    {
+      "type": "titulo_y_texto",
+      "name": "Título y Texto",
+      "settings": [
+        {
+          "type": "html",
+          "id": "titulo",
+          "label": "Título"
+        },
+        {
+          "type": "textarea",
+          "id": "contenido_texto",
+          "label": "Texto"
+        }
+      ]
+    },
+    {
+      "type": "boton",
+      "name": "Botón",
+      "settings": [
+        {
+          "type": "text",
+          "id": "texto_boton",
+          "label": "Texto del Botón"
+        },
+        {
+          "type": "url",
+          "id": "url_boton",
+          "label": "Enlace del Botón"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Grid"
+    }
+  ]
+}
+{% endschema %}
+<div style="background-color: #f3f4f8;">
+<div class="page-width" >
+<div class="custom-grid">
+  <div class="grid-container">
+    {% for block in section.blocks %}
+      <div class="grid-item grid-{{ forloop.index }}">
+        {% case block.type %}
+        {% when "texto" %}
+          <p>{{ block.settings.contenido_texto }}</p>
+        {% when "titulo_y_texto" %}
+          <h2>{{ block.settings.titulo }}</h2>
+          <p>{{ block.settings.contenido_texto }}</p>
+        {% when "boton" %}
+          <a href="{{ block.settings.url_boton }}" class="HISTORIA">{{ block.settings.texto_boton }} <img class="Path-2" src="{{ 'path.svg' | asset_url }}"> </a>
+        {% endcase %}
+      </div>
+    {% endfor %}
+  </div>
+</div>
+</div>
+  </div>
+
+<style>
+.custom-grid .grid-container {
+    display: flex;
+    gap: 20px;
+    padding: 10rem 0rem;
+  justify-content: center;
+}
+
+  .custom-grid .grid-item {
+    box-sizing: border-box;
+  }
+  .grid-1 {
+    width: 174px;
+}
+  .grid-2 {
+    width: 555px;
+}
+  .grid-3 {
+    width: 234px;
+}
+
+  .custom-grid .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007aff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  .custom-grid .btn:hover {
+    background-color: #005bb5;
+  }
+  
+</style>
+
